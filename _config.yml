@@ -4,5 +4,6 @@ title: "Jekyll Links"
 
 exclude:
   - .github
+  - functions
   - LICENSE
   - README.md
