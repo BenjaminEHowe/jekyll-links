@@ -1,7 +1,10 @@
 # Jekyll Links
 
-This repository contains a self-hosted [Linktree](https://linktr.ee/)-style website using [Jekyll](https://jekyllrb.com/), [Cloudflare Pages](https://pages.cloudflare.com/), and [GitHub Actions](https://github.com/features/actions).
-It is deployed to https://jeykll-links.pages.dev/.
+[![Jekyll Badge](https://img.shields.io/badge/Jekyll-C00?logo=jekyll&logoColor=fff&style=flat)](https://jekyllrb.com/)
+[![Cloudflare Pages Badge](https://img.shields.io/badge/Cloudflare%20Pages-F38020?logo=cloudflarepages&logoColor=fff&style=flat)](https://pages.cloudflare.com/)
+[![GitHub Actions Badge](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=flat)](https://github.com/features/actions)
+
+This repository contains a self-hosted [Linktree](https://linktr.ee/)-style website. It is deployed to https://jeykll-links.pages.dev/.
 
 ## Local Development
 
