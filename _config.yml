@@ -1,0 +1,7 @@
+url: "https://jekyll-links.pages.dev/"
+baseurl: "/"
+title: "Jekyll Links"
+
+exclude:
+  - .github
+  - README.md
