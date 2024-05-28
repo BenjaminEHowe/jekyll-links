@@ -4,7 +4,9 @@
 [![Cloudflare Pages Badge](https://img.shields.io/badge/Cloudflare%20Pages-F38020?logo=cloudflarepages&logoColor=fff&style=flat)](https://pages.cloudflare.com/)
 [![GitHub Actions Badge](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=flat)](https://github.com/features/actions)
 
-This repository contains a self-hosted [Linktree](https://linktr.ee/)-style website. It is deployed to https://jeykll-links.pages.dev/.
+This repository contains a self-hosted [Linktree](https://linktr.ee/)-style website.
+It is deployed to https://jeykll-links.pages.dev/.
+We deploy using GitHub Actions as opposed to the [native Cloudflare Pages git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) so that the build settings are captured within the `git` repository, and so that we can use the same container images for local development.
 
 ## Local Development
 
