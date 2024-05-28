@@ -17,5 +17,20 @@
         <li><a href="{{ link.url }}">{{ link.name }}</a></li>
       {% endfor %}
     </ul>
+    <form id="contact-form" method="post" action="#">
+      <fieldset style="display:none">
+        <label for="name">Leave blank if you're human:</label>
+        <input type="text" name="Name" id="name" placeholder="Leave blank if you're human" />
+      </fieldset>
+      <fieldset>
+        <label for="email">Email address:</label>
+        <input type="email" name="Sender" id="email" placeholder="Email address" required />
+      </fieldset>
+      <fieldset>
+        <label for="message">Message:</label>
+        <textarea name="Message" id="message" placeholder="Message" required></textarea>
+      </fieldset>
+      <button type="submit">Send</button>
+      </form>
   </body>
 </html>
