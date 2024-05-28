@@ -1,8 +1,7 @@
 ---
 layout: default
-title: "Happy Jekylling!"
 ---
 
-## You're ready to go!
+## Jekyll Links
 
-Start developing your Jekyll website.
+A Linktree alternative using Jekyll, hosted on Cloudflare Pages
