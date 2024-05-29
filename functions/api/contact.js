@@ -1,12 +1,12 @@
 export async function onRequest(context) {
   if (context.request.method !== "POST") {
-    return new Response("Invalid request method.", { status: 405 });
+    return new Response("Invalid request method", { status: 405 });
   }
 
   const formData = await context.request.formData();
   const body = Object.fromEntries(formData.entries());
 
-  const sent = await sendFormTo(body, context.env.EMAIL_BEN);
+  const sent = await sendFormViaResend(body, context.env.EMAIL_BEN, context.env.RESEND_KEY);
 
   if (!sent) {
     return new Response("Oops! Something went wrong. Please try submitting the form again.", { status: 500 });
@@ -15,29 +15,18 @@ export async function onRequest(context) {
   return Response.redirect(context.request.headers.get("Referer"), 303);
 }
 
-async function sendFormTo(body, email) {
-  const send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
+async function sendFormViaResend(body, email, api_key) {
+  const send_request = new Request("https://api.resend.com/emails", {
     method: "POST",
     headers: {
+      "Authorization": `Bearer ${api_key}`,
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      personalizations: [
-        {
-           to: [{ email }],
-        },
-      ],
-      from: {
-        name: "Contact Form",
-        email: "no-reply@workermail.beh.uk",
-      },
-      subject: "New contact form submission",
-      content: [
-        {
-          type: "text/plain",
-          value: `Email: ${body.email}\nMessage: ${body.message}`,
-        },
-      ],
+      from: "no-reply@viaresend.beh.uk",
+      to: email,
+      subject: "New contact form submission from jekyll-links",
+      text: `Email from ${body.email}\nMessage:\n${body.message}`,
     }),
   });
 
