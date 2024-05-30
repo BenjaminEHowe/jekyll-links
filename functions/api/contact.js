@@ -5,6 +5,7 @@ export async function onRequest(context) {
 
   const formData = await context.request.formData();
   const body = Object.fromEntries(formData.entries());
+  body.cf = context.request.cf
 
   const sent = await sendFormViaResend(body, context.env.EMAIL_BEN, context.env.RESEND_KEY);
 
@@ -26,7 +27,7 @@ async function sendFormViaResend(body, email, api_key) {
       from: "no-reply@viaresend.beh.uk",
       to: email,
       subject: "New contact form submission from jekyll-links",
-      text: `Email from ${body.email}\nMessage:\n${body.message}`,
+      text: `Email from ${body.email}\n\nMessage:\n${body.message}\n\ncf object:\n${JSON.stringify(body.cf, null, 2)}`,
     }),
   });
 
