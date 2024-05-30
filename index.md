@@ -2,6 +2,6 @@
 layout: default
 ---
 
-## Jekyll Links
+# Jekyll Links
 
 A Linktree alternative using Jekyll, hosted on Cloudflare Pages
